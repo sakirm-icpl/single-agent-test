@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "WAZUH_SERVER_HOST": "65.1.109.28",
+        "WAZUH_SERVER_URL": "https://65.1.109.28",
+        "WAZUH_SERVER_USER": "admin",
+        "WAZUH_SERVER_PASSWORD": "ksZNTanH4DQvIzrLhD?FqO*Q1AV7.k17"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5158"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api",
+      "environmentVariables": {
+        "ASPNETCORE_HTTP_PORTS": "8080"
+      },
+      "publishAllPorts": true
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+}

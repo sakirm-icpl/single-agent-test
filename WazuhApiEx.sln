@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34310.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WazuhScheduler", "WazuhScheduler\WazuhScheduler.csproj", "{D9227FDB-429A-493B-90E2-F8C7F6A38CDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WazuhApiProxy", "WazuhApiProxy\WazuhApiProxy.csproj", "{C8E36CF4-83B4-4892-8C60-A2104D92AB06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WazuhApi", "WazuhApi\WazuhApi.csproj", "{15B7E9C9-2C1E-460E-B5B1-7CE84F3F9F00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WazuhCommon", "WazuhCommon\WazuhCommon.csproj", "{AC57ADDC-D064-488E-92D1-DE3727165A24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9A175D5C-F803-45AC-8E8C-314AE9C1745B}"
+	ProjectSection(SolutionItems) = preProject
+		.vsconfig = .vsconfig
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9227FDB-429A-493B-90E2-F8C7F6A38CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9227FDB-429A-493B-90E2-F8C7F6A38CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9227FDB-429A-493B-90E2-F8C7F6A38CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9227FDB-429A-493B-90E2-F8C7F6A38CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E36CF4-83B4-4892-8C60-A2104D92AB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E36CF4-83B4-4892-8C60-A2104D92AB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E36CF4-83B4-4892-8C60-A2104D92AB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E36CF4-83B4-4892-8C60-A2104D92AB06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B7E9C9-2C1E-460E-B5B1-7CE84F3F9F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B7E9C9-2C1E-460E-B5B1-7CE84F3F9F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B7E9C9-2C1E-460E-B5B1-7CE84F3F9F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B7E9C9-2C1E-460E-B5B1-7CE84F3F9F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC57ADDC-D064-488E-92D1-DE3727165A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC57ADDC-D064-488E-92D1-DE3727165A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC57ADDC-D064-488E-92D1-DE3727165A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC57ADDC-D064-488E-92D1-DE3727165A24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DD4DE2C-A671-491C-BD03-9BC9F660FC2D}
+	EndGlobalSection
+EndGlobal

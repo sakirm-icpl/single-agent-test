@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "WazuhScheduler": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "WAZUH_BASE_URL": "https://65.1.109.28:55000",
+        "WAZUH_BASIC_AUTH": "d2F6dWg6NUlLYmRoKlNnUFhHPzYuZkhJUUFkSzlrWTZvNmhTNE4="
+      }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

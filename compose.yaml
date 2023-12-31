@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  wazuhapi:
+    build:
+      context: ./WazuhApi
+      dockerfile: Dockerfile
+    image: wazuh-api:latest # Image name and tag
+    container_name: wazuh_api_container # Container name
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - API_KEY=your_api_key_here
+
+  wazuhscheduler:
+    build:
+      context: ./WazuhScheduler
+      dockerfile: Dockerfile
+    image: wazuh-scheduler:latest
+    container_name: wazuh_scheduler_container
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - WAZUH_BASE_URL=https://65.1.109.28:55000
+      - WAZUH_BASIC_AUTH=d2F6dWg6NUlLYmRoKlNnUFhHPzYuZkhJUUFkSzlrWTZvNmhTNE4=
+
+  wazuhapiproxy:
+    build:
+      context: ./WazuhApiProxy
+      dockerfile: Dockerfile
+    image: wazuh-api-proxy:latest
+    container_name: wazuh_api_proxy_container
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DATA_API_URL=http://dataapi
