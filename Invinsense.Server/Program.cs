@@ -30,11 +30,61 @@ app.UseFileServer(new FileServerOptions
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/tools/osquery", () =>
+app.MapGet("/api/tools/osquery", () =>
 {
-    return "OSQUERY tool";
+    return new
+    {
+        name = "osquery",
+        group = 400,
+        description = "OSQuery v5.10.2",
+        minVersion = "5.10.2",
+        maxVersion = "5.10.2",
+        version = "5.10.2",
+        runtimeIdentifier = "win-x64",
+        downloadUrl = "http://localhost:5197/files/osquery/osquery-win-x64.zip",
+        destinationPath = "artifacts\\osquery",
+        isActive = true
+    };
 })
-.WithName("GetOSQUERY")
+.WithName("TOOLS_OSQUERY")
+.WithOpenApi();
+
+app.MapGet("/api/tools/sysmon", () =>
+{
+    return new
+    {
+        name = "sysmon",
+        group = 300,
+        description = "Microsoft Sysmon v15.11",
+        minVersion = "15.11",
+        maxVersion = "15.11",
+        version = "15.11",
+        runtimeIdentifier = "win-x64",
+        downloadUrl = "http://localhost:5197/files/sysmon/sysmon-win-x64.zip",
+        destinationPath = "artifacts\\sysmon",
+        isActive = true
+    };
+})
+.WithName("TOOLS_SYSMON")
+.WithOpenApi();
+
+app.MapGet("/api/tools/wazuh", () =>
+{
+    return new
+    {
+        name = "osquery",
+        group = 100,
+        description = "Wazuh Windows Agent v4.7",
+        minVersion = "4.7.1",
+        maxVersion = "4.7.1",
+        version = "4.7.1",
+        runtimeIdentifier = "win-x86",
+        downloadUrl = "http://localhost:5197/files/wazuh/wazuh-win-x86.zip",
+        destinationPath = "artifacts\\wazuh",
+        isActive = true
+    };
+})
+.WithName("TOOLS_WAZUH")
 .WithOpenApi();
 
 app.Run();

@@ -5,7 +5,10 @@ Accept: application/json
 
 ###
 
-GET {{Invinsense.Server_HostAddress}}/tools/osquery/
+GET {{Invinsense.Server_HostAddress}}/api/tools/osquery/
 Accept: application/json
+
+###
+
 
 
