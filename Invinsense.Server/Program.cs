@@ -28,11 +28,9 @@ app.UseFileServer(new FileServerOptions
     RequestPath = "/files"
 });
 
-app.MapGet("/", () => "Hello World!");
-
-app.MapGet("/api/tools/osquery", () =>
+var tools = new Dictionary<string, dynamic>
 {
-    return new
+    { "osquery", new
     {
         name = "osquery",
         group = 400,
@@ -42,49 +40,68 @@ app.MapGet("/api/tools/osquery", () =>
         version = "5.10.2",
         runtimeIdentifier = "win-x64",
         downloadUrl = "http://localhost:5197/files/osquery/osquery-win-x64.zip",
-        destinationPath = "artifacts\\osquery",
+        destinationPath = "osquery.zip",
         isActive = true
-    };
-})
-.WithName("TOOLS_OSQUERY")
-.WithOpenApi();
-
-app.MapGet("/api/tools/sysmon", () =>
-{
-    return new
+    } },
+    { "sysmon", new
     {
         name = "sysmon",
-        group = 300,
-        description = "Microsoft Sysmon v15.11",
-        minVersion = "15.11",
-        maxVersion = "15.11",
-        version = "15.11",
+        group = 200,
+        description = "Sysmon v13.10",
+        minVersion = "13.10",
+        maxVersion = "13.10",
+        version = "13.10",
         runtimeIdentifier = "win-x64",
         downloadUrl = "http://localhost:5197/files/sysmon/sysmon-win-x64.zip",
-        destinationPath = "artifacts\\sysmon",
+        destinationPath = "sysmon.zip",
         isActive = true
-    };
-})
-.WithName("TOOLS_SYSMON")
-.WithOpenApi();
-
-app.MapGet("/api/tools/wazuh", () =>
-{
-    return new
+    }
+    },
+    { "wazuh", new
     {
-        name = "osquery",
-        group = 100,
-        description = "Wazuh Windows Agent v4.7",
+        name = "wazuh",
+        group = 300,
+        description = "Wazuh v4.7.1",
         minVersion = "4.7.1",
         maxVersion = "4.7.1",
         version = "4.7.1",
         runtimeIdentifier = "win-x86",
         downloadUrl = "http://localhost:5197/files/wazuh/wazuh-win-x86.zip",
-        destinationPath = "artifacts\\wazuh",
+        destinationPath = "wazuh.zip",
         isActive = true
-    };
+    }
+    }
+};
+
+app.MapGet("/", () => "Hello World!");
+
+app.MapGet("/api/tools", () =>
+{
+    return tools;
 })
-.WithName("TOOLS_WAZUH")
-.WithOpenApi();
+    .WithName("TOOLS")
+    .WithOpenApi();
+
+
+app.MapGet("/api/tools/osquery", () =>
+{
+    return tools["osquery"];
+})
+    .WithName("TOOLS_OSQUERY")
+    .WithOpenApi();
+
+app.MapGet("/api/tools/sysmon", () =>
+{
+    return tools["sysmon"];
+})
+    .WithName("TOOLS_SYSMON")
+    .WithOpenApi();
+
+app.MapGet("/api/tools/wazuh", () =>
+{
+    return tools["wazuh"];
+})
+    .WithName("TOOLS_WAZUH")
+    .WithOpenApi();
 
 app.Run();
