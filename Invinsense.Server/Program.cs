@@ -53,12 +53,12 @@ var tools = new Dictionary<string, dynamic>
     {
         name = sysmonName,
         group = 200,
-        description = $"{sysmonName} v13.10",
-        minVersion = "13.10",
-        maxVersion = "13.10",
-        version = "13.10",
+        description = $"{sysmonName} v15.11",
+        minVersion = "15.11",
+        maxVersion = "15.11",
+        version = "15.11",
         runtimeIdentifier = "win-x64",
-        downloadUrl = $"{host}/files/ {osQueryname}/{osQueryname}-win-x64.zipip",
+        downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zipip",
         destinationPath = $"{sysmonName}.zip",
         isActive = true
     }
