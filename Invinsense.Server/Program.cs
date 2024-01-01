@@ -58,7 +58,7 @@ var tools = new Dictionary<string, dynamic>
         maxVersion = "15.11",
         version = "15.11",
         runtimeIdentifier = "win-x64",
-        downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zipip",
+        downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
         destinationPath = $"{sysmonName}.zip",
         isActive = true
     }
