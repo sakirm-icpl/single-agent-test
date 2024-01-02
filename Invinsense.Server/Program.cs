@@ -47,7 +47,8 @@ var tools = new Dictionary<string, dynamic>
         runtimeIdentifier = "win-x64",
         downloadUrl = $"{host}/files/{osQueryname}/{osQueryname}-win-x64.zip",
         destinationPath = $"{osQueryname}.zip",
-        isActive = true
+        isActive = true,
+        updatedOn = new DateTime(2024, 1, 1)
     } },
     { sysmonName, new
     {
@@ -60,7 +61,8 @@ var tools = new Dictionary<string, dynamic>
         runtimeIdentifier = "win-x64",
         downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
         destinationPath = $"{sysmonName}.zip",
-        isActive = true
+        isActive = true,
+        updatedOn = new DateTime(2024, 1, 1)
     }
     },
     { wazuhName, new
@@ -74,7 +76,8 @@ var tools = new Dictionary<string, dynamic>
         runtimeIdentifier = "win-x86",
         downloadUrl = $"{host}/files/{wazuhName}/{wazuhName}-win-x86.zip",
         destinationPath = $"{wazuhName}.zip",
-        isActive = true
+        isActive = true,
+        updatedOn = new DateTime(2024, 1, 1)
     }
     }
 };
