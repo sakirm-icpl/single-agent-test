@@ -40,13 +40,23 @@ var tools = new Dictionary<string, dynamic>
     {
         name = osQueryname,
         group = 400,
-        description = $"{osQueryname} v5.10.2",
-        minVersion = "5.10.2",
-        maxVersion = "5.10.2",
-        version = "5.10.2",
         runtimeIdentifier = "win-x64",
         downloadUrl = $"{host}/files/{osQueryname}/{osQueryname}-win-x64.zip",
-        destinationPath = $"{osQueryname}.zip",
+        downloadFileName = $"{osQueryname}.zip",
+        versionDetectionInstruction = new {
+            type = "PROGRAM_REGISTRY",
+            key = osQueryname,
+            version = "5.10.2",
+            minVersion = "5.10.2",
+            maxVersion = "5.10.2"
+        },
+        installInstruction = new {
+            installType = "INSTALLER",
+            installerFile = $"{osQueryname}-5.10.2.msi",
+            installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1" },
+            uninstallArgs = Array.Empty<object>()
+        },
+        description = $"{osQueryname} v5.10.2",
         isActive = true,
         updatedOn = new DateTime(2024, 1, 1)
     } },
@@ -54,13 +64,23 @@ var tools = new Dictionary<string, dynamic>
     {
         name = sysmonName,
         group = 200,
-        description = $"{sysmonName} v15.11",
-        minVersion = "15.11",
-        maxVersion = "15.11",
-        version = "15.11",
         runtimeIdentifier = "win-x64",
         downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
-        destinationPath = $"{sysmonName}.zip",
+        downloadFileName = $"{sysmonName}.zip",
+        versionDetectionInstruction = new {
+            type = "SERVICE_REGISTRY",
+            key = sysmonName,
+            version = "15.11",
+            minVersion = "15.11",
+            maxVersion = "15.11"
+        },
+        installInstruction = new {
+            installType = "EXECUTABLE",
+            installerFile = $"{sysmonName}-15.11.exe",
+            installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1" },
+            uninstallArgs = new[] { "/uninstall" }
+        },
+        description = $"{sysmonName} v15.11",
         isActive = true,
         updatedOn = new DateTime(2024, 1, 1)
     }
@@ -69,13 +89,23 @@ var tools = new Dictionary<string, dynamic>
     {
         name = wazuhName,
         group = 300,
-        description = $"{wazuhName} v4.7.1",
-        minVersion = "4.7.1",
-        maxVersion = "4.7.1",
-        version = "4.7.1",
         runtimeIdentifier = "win-x86",
         downloadUrl = $"{host}/files/{wazuhName}/{wazuhName}-win-x86.zip",
-        destinationPath = $"{wazuhName}.zip",
+        downloadFileName = $"{wazuhName}.zip",
+        versionDetectionInstruction = new {
+            type = "PROGRAM_REGISTRY",
+            key = wazuhName,
+            version = "4.7.1",
+            minVersion = "4.7.1",
+            maxVersion = "4.7.1"
+        },
+        installInstruction = new {
+            installType = "INSTALLER",
+            installerFile = $"{wazuhName}-4.7.1.msi",
+            installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1", "WAZUH_MANAGER=65.1.109.28", "WAZUH_REGISTRATION_SERVER=65.1.109.28", "WAZUH_AGENT_GROUP={{reg.local.SOFTWARE\\Infopercept.Groups}}" },
+            uninstallArgs = Array.Empty<object>()
+        },
+        description = $"{wazuhName} v4.7.1",
         isActive = true,
         updatedOn = new DateTime(2024, 1, 1)
     }
@@ -92,3 +122,14 @@ app.MapGet("/api/tools", () =>
     .WithOpenApi();
 
 app.Run();
+
+//Wazuh Params
+//WAZUH_MANAGER=
+//WAZUH_REGISTRATION_SERVER=
+//WAZUH_AGENT_GROUP={{reg.local.SOFTWARE\\Infopercept.Groups}}
+//REGISTRATION_TYPE = PASSWORD / CERTIFICATE
+//WAZUH_REGISTRATION_PASSWORD
+//WAZUH_REGISTRATION_CERTIFICATE
+//WAZUH_REGISTRATION_CERTIFICATE_KEY
+//<Environment Id="PATH" Name="PATH" Value="[INSTALLDIR]" Permanent="yes" Part="last" Action="set" System="yes" />
+//<Environment Id="WAZUH_MANAGER" Name="WAZUH_MANAGER" Value="[WAZUH_MANAGER]" Permanent="yes" Part="last" Action="set" System="yes" />
