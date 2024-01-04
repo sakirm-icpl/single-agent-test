@@ -76,8 +76,8 @@ var tools = new Dictionary<string, dynamic>
         },
         installInstruction = new {
             installType = "EXECUTABLE",
-            installerFile = $"{sysmonName}-15.11.exe",
-            installArgs = new[] { "-accepteula", "-i", "C:\\Program Files\\Infopercept\\sysmonconfig.xml" },
+            installerFile = $"Sysmon64.exe",
+            installArgs = new[] { "-accepteula", "-i", "C:\\Windows\\sysmonconfig.xml" },
             uninstallArgs = new[] { "-u" }
         },
         description = $"{sysmonName} v15.11",
