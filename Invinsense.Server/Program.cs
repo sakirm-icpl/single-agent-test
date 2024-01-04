@@ -69,14 +69,14 @@ var tools = new Dictionary<string, dynamic>
         downloadFileName = $"{sysmonName}.zip",
         versionDetectionInstruction = new {
             type = "SERVICE_REGISTRY",
-            key = sysmonName,
+            key = "Sysmon64",
             version = "15.11",
             minVersion = "15.11",
             maxVersion = "15.11"
         },
         installInstruction = new {
             installType = "EXECUTABLE",
-            installerFile = $"Sysmon64.exe",
+            installerFile = "Sysmon64.exe",
             installArgs = new[] { "-accepteula", "-i", "C:\\Windows\\sysmonconfig.xml" },
             uninstallArgs = new[] { "-u" }
         },
