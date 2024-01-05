@@ -101,7 +101,7 @@ var tools = new Dictionary<string, dynamic>
         },
         installInstruction = new {
             installType = "INSTALLER",
-            installerFile = $"{wazuhName}-4.7.1.msi",
+            installerFile = $"{wazuhName}-agent-4.7.1.msi",
             installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1", "WAZUH_MANAGER=65.1.109.28", "WAZUH_REGISTRATION_SERVER=65.1.109.28", "WAZUH_AGENT_GROUP={{reg64.local.SOFTWARE\\Infopercept.Groups}}" },
             uninstallArgs = Array.Empty<object>()
         },
