@@ -94,7 +94,7 @@ var tools = new Dictionary<string, dynamic>
         downloadFileName = $"{wazuhName}.zip",
         versionDetectionInstruction = new {
             type = "PROGRAM_REGISTRY",
-            key = wazuhName,
+            key = "Wazuh Agent",
             version = "4.7.1",
             minVersion = "4.7.1",
             maxVersion = "4.7.1"
@@ -112,7 +112,7 @@ var tools = new Dictionary<string, dynamic>
     }
 };
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Invinsense.Server 1.0");
 
 app.MapGet("/api/tools", () =>
 {
