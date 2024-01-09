@@ -41,20 +41,26 @@ var tools = new Dictionary<string, dynamic>
         name = osQueryname,
         group = 400,
         runtimeIdentifier = "win-x64",
+        version = "5.10.2",
         downloadUrl = $"{host}/files/{osQueryname}/{osQueryname}-win-x64.zip",
         downloadFileName = $"{osQueryname}.zip",
-        versionDetectionInstruction = new {
+        installCheckInstruction = new {
             type = "PROGRAM_REGISTRY",
-            key = osQueryname,
-            version = "5.10.2",
-            minVersion = "5.10.2",
-            maxVersion = "5.10.2"
+            key = osQueryname
         },
         installInstruction = new {
             installType = "INSTALLER",
             installerFile = $"{osQueryname}-5.10.2.msi",
             installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1" },
             uninstallArgs = Array.Empty<object>()
+        },
+        upgradeInstruction = new {
+            minVersion = "5.10.2",
+            unInstallBeforeUpgrade= false,
+        },
+        downgradeInstruction = new {
+            maxVersion = "5.10.2",
+            unInstallBeforeDowngrade = true,            
         },
         description = $"{osQueryname} v5.10.2",
         isActive = true,
@@ -65,20 +71,26 @@ var tools = new Dictionary<string, dynamic>
         name = sysmonName,
         group = 300,
         runtimeIdentifier = "win-x64",
+        version = "15.11",
         downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
         downloadFileName = $"{sysmonName}.zip",
-        versionDetectionInstruction = new {
+        installCheckInstruction = new {
             type = "SERVICE_REGISTRY",
-            key = "Sysmon64",
-            version = "15.11",
-            minVersion = "15.11",
-            maxVersion = "15.11"
+            key = "Sysmon64"
         },
         installInstruction = new {
             installType = "EXECUTABLE",
             installerFile = "Sysmon64.exe",
             installArgs = new[] { "-accepteula", "-i", "C:\\Windows\\sysmonconfig.xml" },
             uninstallArgs = new[] { "-u" }
+        },
+        upgradeInstruction = new {
+            minVersion = "5.10.2",
+            unInstallBeforeUpgrade= true,
+        },
+        downgradeInstruction = new {
+            maxVersion = "5.10.2",
+            unInstallBeforeDowngrade = true,
         },
         description = $"{sysmonName} v15.11",
         isActive = true,
@@ -90,20 +102,26 @@ var tools = new Dictionary<string, dynamic>
         name = wazuhName,
         group = 100,
         runtimeIdentifier = "win-x86",
+        version = "4.7.1",
         downloadUrl = $"{host}/files/{wazuhName}/{wazuhName}-win-x86.zip",
         downloadFileName = $"{wazuhName}.zip",
-        versionDetectionInstruction = new {
+        installCheckInstruction = new {
             type = "PROGRAM_REGISTRY",
-            key = "Wazuh Agent",
-            version = "4.7.1",
-            minVersion = "4.7.1",
-            maxVersion = "4.7.1"
+            key = "Wazuh Agent"
         },
         installInstruction = new {
             installType = "INSTALLER",
             installerFile = $"{wazuhName}-agent-4.7.1.msi",
             installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1", "WAZUH_MANAGER=\"65.1.109.28\"", "WAZUH_REGISTRATION_SERVER=\"65.1.109.28\"", "WAZUH_AGENT_GROUP=\"{{reg64.local.SOFTWARE\\Infopercept.Groups}}\"" },
             uninstallArgs = Array.Empty<object>()
+        },
+        upgradeInstruction = new {
+            minVersion = "4.7.1",
+            unInstallBeforeUpgrade= false,
+        },
+        downgradeInstruction = new {
+            maxVersion = "4.7.1",
+            unInstallBeforeDowngrade = true,
         },
         description = $"{wazuhName} v4.7.1",
         isActive = true,
