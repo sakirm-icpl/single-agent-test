@@ -63,7 +63,7 @@ var tools = new Dictionary<string, dynamic>
     { sysmonName, new
     {
         name = sysmonName,
-        group = 200,
+        group = 300,
         runtimeIdentifier = "win-x64",
         downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
         downloadFileName = $"{sysmonName}.zip",
@@ -88,7 +88,7 @@ var tools = new Dictionary<string, dynamic>
     { wazuhName, new
     {
         name = wazuhName,
-        group = 300,
+        group = 100,
         runtimeIdentifier = "win-x86",
         downloadUrl = $"{host}/files/{wazuhName}/{wazuhName}-win-x86.zip",
         downloadFileName = $"{wazuhName}.zip",
@@ -102,7 +102,7 @@ var tools = new Dictionary<string, dynamic>
         installInstruction = new {
             installType = "INSTALLER",
             installerFile = $"{wazuhName}-agent-4.7.1.msi",
-            installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1", "WAZUH_MANAGER=\"65.1.109.28\"", "WAZUH_REGISTRATION_SERVER=\"65.1.109.28\"", "WAZUH_AGENT_GROUP={{reg64.local.SOFTWARE\\Infopercept.Groups}}" },
+            installArgs = new[] { "ALLUSERS=1", "ACCEPTEULA=1", "WAZUH_MANAGER=\"65.1.109.28\"", "WAZUH_REGISTRATION_SERVER=\"65.1.109.28\"", "WAZUH_AGENT_GROUP=\"{{reg64.local.SOFTWARE\\Infopercept.Groups}}\"" },
             uninstallArgs = Array.Empty<object>()
         },
         description = $"{wazuhName} v4.7.1",
