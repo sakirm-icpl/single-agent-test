@@ -81,7 +81,7 @@ var tools = new Dictionary<string, dynamic>
         installInstruction = new {
             installType = "EXECUTABLE",
             installerFile = "Sysmon64.exe",
-            installArgs = new[] { "-accepteula", "-i", "C:\\Windows\\sysmonconfig.xml" },
+            installArgs = new[] { "-accepteula", "-i" },
             uninstallArgs = new[] { "-u" }
         },
         upgradeInstruction = new {
