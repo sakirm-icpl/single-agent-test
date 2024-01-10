@@ -85,11 +85,11 @@ var tools = new Dictionary<string, dynamic>
             uninstallArgs = new[] { "-u" }
         },
         upgradeInstruction = new {
-            minVersion = "5.10.2",
+            minVersion = "15.11",
             unInstallBeforeUpgrade= true,
         },
         downgradeInstruction = new {
-            maxVersion = "5.10.2",
+            maxVersion = "15.11",
             unInstallBeforeDowngrade = true,
         },
         description = $"{sysmonName} v15.11",
