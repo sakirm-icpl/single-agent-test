@@ -28,7 +28,8 @@ app.UseFileServer(new FileServerOptions
     RequestPath = "/files"
 });
 
-var host = "https://65.1.109.28:5001";
+var baseUrl = Environment.GetEnvironmentVariable("PUBLIC_URL");
+
 
 var osQueryname = "osquery";
 var sysmonName = "sysmon";
@@ -42,7 +43,7 @@ var tools = new Dictionary<string, dynamic>
         group = 400,
         runtimeIdentifier = "win-x64",
         version = "5.10.2",
-        downloadUrl = $"{host}/files/{osQueryname}/{osQueryname}-win-x64.zip",
+        downloadUrl = $"{baseUrl}/files/{osQueryname}/{osQueryname}-win-x64.zip",
         downloadFileName = $"{osQueryname}.zip",
         installCheckInstruction = new {
             type = "PROGRAM_REGISTRY",
@@ -72,7 +73,7 @@ var tools = new Dictionary<string, dynamic>
         group = 300,
         runtimeIdentifier = "win-x64",
         version = "15.11",
-        downloadUrl = $"{host}/files/{sysmonName}/{sysmonName}-win-x64.zip",
+        downloadUrl = $"{baseUrl}/files/{sysmonName}/{sysmonName}-win-x64.zip",
         downloadFileName = $"{sysmonName}.zip",
         installCheckInstruction = new {
             type = "SERVICE_REGISTRY",
@@ -103,7 +104,7 @@ var tools = new Dictionary<string, dynamic>
         group = 100,
         runtimeIdentifier = "win-x86",
         version = "4.7.1",
-        downloadUrl = $"{host}/files/{wazuhName}/{wazuhName}-win-x86.zip",
+        downloadUrl = $"{baseUrl}/files/{wazuhName}/{wazuhName}-win-x86.zip",
         downloadFileName = $"{wazuhName}.zip",
         installCheckInstruction = new {
             type = "PROGRAM_REGISTRY",
