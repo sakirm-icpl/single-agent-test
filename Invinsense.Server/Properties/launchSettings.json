@@ -6,8 +6,11 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "EDR_HOST": "172.17.16.35",
-        "PUBLIC_URL": "https://172.17.16.35:5001"
+        "WAZUH_SERVER_HOST": "65.1.109.28",
+        "WAZUH_SERVER_URL": "https://65.1.109.28",
+        "WAZUH_SERVER_USER": "admin",
+        "WAZUH_SERVER_PASSWORD": "ksZNTanH4DQvIzrLhD?FqO*Q1AV7.k17",
+        "SERVER_BASE_URL": "https://172.17.16.35:5001"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5197"
@@ -18,8 +21,11 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "EDR_HOST": "172.17.16.35",
-        "PUBLIC_URL": "https://172.17.16.35:5001"
+        "WAZUH_SERVER_HOST": "65.1.109.28",
+        "WAZUH_SERVER_URL": "https://65.1.109.28",
+        "WAZUH_SERVER_USER": "admin",
+        "WAZUH_SERVER_PASSWORD": "ksZNTanH4DQvIzrLhD?FqO*Q1AV7.k17",
+        "SERVER_BASE_URL": "https://172.17.16.35:5001"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7069;http://localhost:5197"
@@ -29,7 +35,13 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "environmentVariables": {
-        "ASPNETCORE_HTTP_PORTS": "8080"
+        "ASPNETCORE_HTTP_PORTS": "8080",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "WAZUH_SERVER_HOST": "65.1.109.28",
+        "WAZUH_SERVER_URL": "https://65.1.109.28",
+        "WAZUH_SERVER_USER": "admin",
+        "WAZUH_SERVER_PASSWORD": "ksZNTanH4DQvIzrLhD?FqO*Q1AV7.k17",
+        "SERVER_BASE_URL": "https://172.17.16.35:5001"
       },
       "publishAllPorts": true
     }

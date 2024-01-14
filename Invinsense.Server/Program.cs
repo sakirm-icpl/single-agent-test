@@ -31,10 +31,8 @@ app.UseFileServer(new FileServerOptions
     RequestPath = "/files"
 });
 
-var baseUrl = Environment.GetEnvironmentVariable("PUBLIC_URL");
-
-var edrHost = Environment.GetEnvironmentVariable("EDR_HOST");
-
+var baseUrl = Environment.GetEnvironmentVariable("SERVER_BASE_URL");
+var edrHost = Environment.GetEnvironmentVariable("WAZUH_SERVER_HOST");
 
 var osQueryname = "osquery";
 var sysmonName = "sysmon";
