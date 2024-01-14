@@ -11,10 +11,10 @@ var basicAuth = Environment.GetEnvironmentVariable("WAZUH_BASIC_AUTH");
 
 WazuhCommandQueueItem[] operations =
 {
-    new WazuhCommandQueueItem("q-quick-scan", "quick-scan0"),
-    new WazuhCommandQueueItem("q-full-scan", "full-scan0"),
-    new WazuhCommandQueueItem("q-isolation", "isolation0", LabelOperation.Add, "isolation"),
-    new WazuhCommandQueueItem("q-unisolation", "unisolation0", LabelOperation.Remove, "isolation")
+    new("q-quick-scan", "quick-scan0"),
+    new("q-full-scan", "full-scan0"),
+    new("q-isolation", "isolation0", LabelOperation.Add, "isolation"),
+    new("q-unisolation", "unisolation0", LabelOperation.Remove, "isolation")
 };
 
 Console.WriteLine($"Wazuh API: {baseUrl}");

@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 var host = Environment.GetEnvironmentVariable("WAZUH_SERVER_HOST");
@@ -91,11 +90,14 @@ api.MapPost("/request", async (HttpRequest apiRequest) =>
 
 app.Run();
 
-void ExtractResponseCookies(CookieContainer cookies, HttpResponseMessage response)
+static void ExtractResponseCookies(CookieContainer cookies, HttpResponseMessage response)
 {
     var setCookieHeaders = response.Headers.GetValues("Set-Cookie");
+
+    var requestUri = response?.RequestMessage?.RequestUri??new Uri("https://localhost/");
+
     if (setCookieHeaders != null)
     {
-        cookies.SetCookies(response.RequestMessage.RequestUri, string.Join(",", setCookieHeaders));
+        cookies.SetCookies(requestUri, string.Join(",", setCookieHeaders));
     }
 }
